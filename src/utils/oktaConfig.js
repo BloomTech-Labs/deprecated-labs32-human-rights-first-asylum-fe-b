@@ -1,7 +1,7 @@
 const config = {
-  issuer: process.env.REACT_APP_OKTA_ISSUER_URI,
+  issuer: 'https://dev-625244.okta.com/outh2/default',
   redirectUri: window.location.origin + '/implicit/callback',
-  clientId: process.env.REACT_APP_CLIENT_ID,
+  clientId: '0oauwlyl5Xf6AvJxv4x6',
   pkce: true,
   scopes: ['openid', 'email', 'profile'],
 };
