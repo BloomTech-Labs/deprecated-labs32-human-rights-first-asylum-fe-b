@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, message } from 'antd';
+import { Upload, message, Button } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 
 const { Dragger } = Upload;
@@ -36,6 +36,7 @@ function UploadFile() {
           company data or other band files
         </p>
       </Dragger>
+      <Button type="primary">Submit</Button>
     </>
   );
 }
