@@ -86,50 +86,28 @@ function Dashboard() {
     setSearchText('');
   };
 
+  // map & implement in func
   const columns = [
     {
-      title: 'Name',
+      title: "Judge's Name",
       dataIndex: 'name',
       key: 'name',
       width: '30%',
       ...getColumnSearchProps('name'),
-      filters: [
-        {
-          text: 'Joe',
-          value: 'Joe',
-        },
-        {
-          text: 'Jim',
-          value: 'Jim',
-        },
-        {
-          text: 'Submenu',
-          value: 'Submenu',
-          children: [
-            {
-              text: 'Green',
-              value: 'Green',
-            },
-            {
-              text: 'Black',
-              value: 'Black',
-            },
-          ],
-        },
-      ],
+      filterMultiple: false,
       // specify the condition of filtering result
       // here is that finding the name started with `value`
       onFilter: (value, record) => record.name.indexOf(value) === 0,
       sorter: (a, b) => a.name.length - b.name.length,
-      sortDirections: ['descend'],
+      sortDirections: ['descend', 'ascend'],
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: 'Case ID',
+      dataIndex: 'caseId',
+      key: 'caseId',
       width: '20%',
       defaultSortOrder: 'descend',
-      sorter: (a, b) => a.age - b.age,
+      sorter: (a, b) => a.caseId - b.caseId,
     },
     {
       title: 'Address',
@@ -158,25 +136,25 @@ function Dashboard() {
     {
       key: '1',
       name: 'John Brown',
-      age: 32,
+      caseId: 32,
       address: 'New York No. 1 Lake Park',
     },
     {
       key: '2',
       name: 'Jim Green',
-      age: 42,
+      caseId: 42,
       address: 'London No. 1 Lake Park',
     },
     {
       key: '3',
       name: 'Joe Black',
-      age: 32,
+      caseId: 32,
       address: 'Sidney No. 1 Lake Park',
     },
     {
       key: '4',
       name: 'Jim Red',
-      age: 32,
+      caseId: 32,
       address: 'London No. 2 Lake Park',
     },
   ];
