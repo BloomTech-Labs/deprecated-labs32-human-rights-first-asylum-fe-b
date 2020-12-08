@@ -13,7 +13,7 @@ const LoginContainer = () => {
       clientId,
       redirectUri,
       registration: {
-        // there is more we can do to handle some errors here.
+        //  there is more we can do to handle some errors here.
       },
       features: { registration: false },
       // turning this feature on allows your widget to use Okta for user registration
