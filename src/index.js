@@ -18,7 +18,7 @@ import { HomePage } from './components/pages/Home';
 import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
-import { LoadingComponent } from './components/common';
+import { LoadingComponent, Header } from './components/common';
 
 ReactDOM.render(
   <Router>
@@ -42,6 +42,7 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
+      <Header />
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
