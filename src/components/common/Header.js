@@ -10,7 +10,7 @@ const Header = () => {
     <>
       <StyledHeader>
         <Title>Human Rights First</Title>
-        <Menu mode="horizontal" class="menu">
+        <Menu mode="horizontal">
           <Menu.Item>Who We Are</Menu.Item>
           <Menu.Item>
             <Button type="primary">Upload</Button>
