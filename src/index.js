@@ -18,7 +18,7 @@ import { HomePage } from './components/pages/Home';
 import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
-import { LoadingComponent, Header } from './components/common';
+import { LoadingComponent, Header, Footer } from './components/common';
 
 ReactDOM.render(
   <Router>
@@ -58,6 +58,7 @@ function App() {
         <SecureRoute path="/datavis" component={ExampleDataViz} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
     </Security>
   );
 }
