@@ -1,7 +1,7 @@
 import React from 'react';
 import { Upload, message, Button } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
-import { DivStyled } from './upload-styling';
+import { DivStyled, ButtonDiv } from './upload-styling';
 
 const { Dragger } = Upload;
 
@@ -48,7 +48,9 @@ function UploadFile() {
           <p>Upload .pdf or .csv files only</p>
         </p>
       </Dragger>
-      <Button type="primary">Submit</Button>
+      <ButtonDiv>
+        <Button type="primary">Submit</Button>
+      </ButtonDiv>
     </DivStyled>
   );
 }
