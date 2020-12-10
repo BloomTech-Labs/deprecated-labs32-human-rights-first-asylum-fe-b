@@ -9,11 +9,6 @@ const props = {
   name: 'file',
   multiple: true,
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-  beforeUpload: file => {
-    if (file.type !== 'pdf' || file.type !== 'csv') {
-      message.error('File must be a .pdf or .csv file');
-    }
-  },
   onChange(info) {
     const { status } = info.file;
     if (status !== 'uploading') {
@@ -24,6 +19,16 @@ const props = {
     } else if (status === 'error') {
       message.error(`${info.file.name} file upload failed.`);
     }
+  },
+  previewFile(file) {
+    console.log('Your upload file:', file);
+    // Your process logic. Here we just mock to the same file
+    return fetch('https://next.json-generator.com/api/json/get/4ytyBoLK8', {
+      method: 'POST',
+      body: file,
+    })
+      .then(res => res.json())
+      .then(({ thumbnail }) => thumbnail);
   },
 };
 
@@ -39,7 +44,8 @@ function UploadFile() {
         </p>
         <p className="ant-upload-hint">
           Support for a single or bulk upload. Strictly prohibit from uploading
-          company data or other band files
+          company data or other band files.{' '}
+          <p>Upload .pdf or .csv files only</p>
         </p>
       </Dragger>
       <Button type="primary">Submit</Button>
