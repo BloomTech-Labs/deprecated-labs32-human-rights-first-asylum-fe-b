@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
+import { DivStyled } from './dashboard-styling';
 
 function Dashboard() {
   const [searchText, setSearchText] = useState('');
@@ -168,9 +169,9 @@ function Dashboard() {
   }
 
   return (
-    <>
-      <Table columns={columns} dataSource={data} onChange={onChange} />;
-    </>
+    <DivStyled>
+      <Table columns={columns} dataSource={data} onChange={onChange} />
+    </DivStyled>
   );
 }
 
