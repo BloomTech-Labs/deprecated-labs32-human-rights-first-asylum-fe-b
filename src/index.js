@@ -18,7 +18,7 @@ import { HomePage } from './components/pages/Home';
 import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
-import { LoadingComponent } from './components/common';
+import { LoadingComponent, Header, Footer } from './components/common';
 import { UploadFile } from './components/pages/UploadFile';
 
 ReactDOM.render(
@@ -43,6 +43,7 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
+      <Header />
       <Switch>
         <Route path="/" component={UploadFile} />
         <Route path="/login" component={LoginPage} />
@@ -59,6 +60,7 @@ function App() {
         <SecureRoute path="/datavis" component={ExampleDataViz} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
     </Security>
   );
 }
