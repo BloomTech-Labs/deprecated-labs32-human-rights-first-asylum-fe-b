@@ -18,8 +18,7 @@ import { HomePage } from './components/pages/Home';
 import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
-import { LoadingComponent } from './components/common';
-import Typography from './styles/Typography';
+import { LoadingComponent, Header, Footer } from './components/common';
 
 ReactDOM.render(
   <Router>
@@ -42,25 +41,24 @@ function App() {
   };
 
   return (
-    <>
-      <Typography />
-      <Security {...config} onAuthRequired={authHandler}>
-        <Switch>
-          <Route path="/login" component={LoginPage} />
-          <Route path="/implicit/callback" component={LoginCallback} />
-          <Route path="/landing" component={LandingPage} />
-          {/* any of the routes you need secured should be registered as SecureRoutes */}
-          <SecureRoute
-            path="/"
-            exact
-            component={() => <HomePage LoadingComponent={LoadingComponent} />}
-          />
-          <SecureRoute path="/example-list" component={ExampleListPage} />
-          <SecureRoute path="/profile-list" component={ProfileListPage} />
-          <SecureRoute path="/datavis" component={ExampleDataViz} />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </Security>
-    </>
+    <Security {...config} onAuthRequired={authHandler}>
+      <Header />
+      <Switch>
+        <Route path="/login" component={LoginPage} />
+        <Route path="/implicit/callback" component={LoginCallback} />
+        <Route path="/landing" component={LandingPage} />
+        {/* any of the routes you need secured should be registered as SecureRoutes */}
+        <SecureRoute
+          path="/"
+          exact
+          component={() => <HomePage LoadingComponent={LoadingComponent} />}
+        />
+        <SecureRoute path="/example-list" component={ExampleListPage} />
+        <SecureRoute path="/profile-list" component={ProfileListPage} />
+        <SecureRoute path="/datavis" component={ExampleDataViz} />
+        <Route component={NotFoundPage} />
+      </Switch>
+      <Footer />
+    </Security>
   );
 }
