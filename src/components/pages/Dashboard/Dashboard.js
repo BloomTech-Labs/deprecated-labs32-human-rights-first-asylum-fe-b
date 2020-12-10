@@ -7,6 +7,7 @@ import { DivStyled } from './dashboard-styling';
 function Dashboard() {
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
+  // const [columnData, setColumnData] = useState([]); - to use http data
 
   // to populate w api call to pull down data
   useEffect(() => {}, []);
