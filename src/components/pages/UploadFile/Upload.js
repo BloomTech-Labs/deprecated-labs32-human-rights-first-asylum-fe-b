@@ -1,6 +1,7 @@
 import React from 'react';
 import { Upload, message, Button } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
+import { DivStyled } from './upload-styling';
 
 const { Dragger } = Upload;
 
@@ -8,6 +9,11 @@ const props = {
   name: 'file',
   multiple: true,
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+  beforeUpload: file => {
+    if (file.type !== 'pdf' || file.type !== 'csv') {
+      message.error('File must be a .pdf or .csv file');
+    }
+  },
   onChange(info) {
     const { status } = info.file;
     if (status !== 'uploading') {
@@ -23,7 +29,7 @@ const props = {
 
 function UploadFile() {
   return (
-    <>
+    <DivStyled>
       <Dragger {...props} accept=".pdf, .csv">
         <p className="ant-upload-drag-icon">
           <InboxOutlined />
@@ -37,7 +43,7 @@ function UploadFile() {
         </p>
       </Dragger>
       <Button type="primary">Submit</Button>
-    </>
+    </DivStyled>
   );
 }
 
