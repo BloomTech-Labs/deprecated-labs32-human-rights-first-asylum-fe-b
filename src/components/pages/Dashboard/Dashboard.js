@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
@@ -6,6 +6,9 @@ import { SearchOutlined } from '@ant-design/icons';
 function Dashboard() {
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
+
+  // to populate w api call to pull down data
+  useEffect(() => {}, []);
 
   let getColumnSearchProps = dataIndex => ({
     filterDropdown: ({
