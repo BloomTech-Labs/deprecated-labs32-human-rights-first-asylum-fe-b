@@ -102,7 +102,7 @@ function Dashboard() {
       // specify the condition of filtering result
       // here is that finding the name started with `value`
       onFilter: (value, record) => record.name.indexOf(value) === 0,
-      sorter: (a, b) => a.name.length - b.name.length,
+      sorter: (a, b) => a.name.localeCompare(b.name),
       sortDirections: ['descend', 'ascend'],
     },
     {
@@ -114,22 +114,53 @@ function Dashboard() {
       sorter: (a, b) => a.caseId - b.caseId,
     },
     {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: 'Country of Origin',
+      dataIndex: 'country',
+      key: 'country',
       filters: [
         {
-          text: 'London',
-          value: 'London',
+          text: 'Ukraine',
+          value: 'Ukraine',
         },
         {
-          text: 'New York',
-          value: 'New York',
+          text: 'United States',
+          value: 'United States',
+        },
+        {
+          text: 'Nigeria',
+          value: 'Nigeria',
+        },
+        {
+          text: 'Ghana',
+          value: 'Ghana',
+        },
+      ],
+      filterMultiple: true,
+      onFilter: (value, record) => record.country.indexOf(value) === 0,
+      sorter: (a, b) => a.country.localeCompare(b.country),
+      sortDirections: ['descend', 'ascend'],
+    },
+    {
+      title: 'Outcome',
+      dataIndex: 'outcome',
+      key: 'outcome',
+      filters: [
+        {
+          text: 'Granted',
+          value: 'Granted',
+        },
+        {
+          text: 'Denied',
+          value: 'Denied',
+        },
+        {
+          text: 'Pending',
+          value: 'Pending',
         },
       ],
       filterMultiple: false,
-      onFilter: (value, record) => record.address.indexOf(value) === 0,
-      sorter: (a, b) => a.address.length - b.address.length,
+      onFilter: (value, record) => record.outcome.indexOf(value) === 0,
+      sorter: (a, b) => a.outcome.localeCompare(b.outcome),
       sortDirections: ['descend', 'ascend'],
     },
   ];
@@ -139,27 +170,31 @@ function Dashboard() {
   const data = [
     {
       key: '1',
-      name: 'John Brown',
+      name: 'Brian Brownstein',
       caseId: 32,
-      address: 'New York No. 1 Lake Park',
+      country: 'United States',
+      outcome: 'Pending',
     },
     {
       key: '2',
       name: 'Jim Green',
       caseId: 42,
-      address: 'London No. 1 Lake Park',
+      country: 'Ukraine',
+      outcome: 'Granted',
     },
     {
       key: '3',
       name: 'Joe Black',
       caseId: 32,
-      address: 'Sidney No. 1 Lake Park',
+      country: 'Nigeria',
+      outcome: 'Denied',
     },
     {
       key: '4',
       name: 'Jim Red',
       caseId: 32,
-      address: 'London No. 2 Lake Park',
+      country: 'Ghana',
+      outcome: 'Denied',
     },
   ];
 
