@@ -1,38 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Upload, message, Button } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import { DivStyled, ButtonDiv } from './upload-styling';
+import axios from 'axios';
 
 const { Dragger } = Upload;
 
-const props = {
-  name: 'file',
-  multiple: true,
-  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-  onChange(info) {
-    const { status } = info.file;
-    if (status !== 'uploading') {
-      console.log(info.file, info.fileList);
-    }
-    if (status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === 'error') {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  },
-  previewFile(file) {
-    console.log('Your upload file:', file);
-    // Your process logic. Here we just mock to the same file
-    return fetch('https://next.json-generator.com/api/json/get/4ytyBoLK8', {
-      method: 'POST',
-      body: file,
-    })
-      .then(res => res.json())
-      .then(({ thumbnail }) => thumbnail);
-  },
-};
-
 function UploadFile() {
+  const [fileList, setFileList] = useState([]);
+  const [uploading, setUploading] = useState(false);
+
+  const props = {
+    name: 'file',
+    multiple: false,
+    showDownloadIcon: true,
+    onRemove(file) {
+      const index = fileList.indexOf(file);
+      const newFileList = fileList.slice();
+      newFileList.splice(index, 1);
+      setFileList(newFileList);
+    },
+    beforeUpload(file) {
+      setFileList([...fileList, file]);
+      return false;
+    },
+    fileList,
+    onChange(info) {
+      const { status } = info.file;
+      if (status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (status === 'done') {
+        message.success(`${info.file.name} file uploaded successfully.`);
+      } else if (status === 'error') {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+  };
+
+  const clickHandler = () => {
+    const formData = new FormData();
+    fileList.forEach(file => formData.append('files[]', file));
+    setUploading(true);
+
+    axios
+      .post('https://www.mocky.io/v2/5cc8019d300000980a055e76', formData)
+      .then(res => {
+        setFileList([]);
+        message.success('Upload Successful');
+      })
+      .catch(err => {
+        message.error('Upload Failed');
+      })
+      .finally(() => {
+        setUploading(false);
+      });
+  };
+
   return (
     <DivStyled>
       <Dragger {...props} accept=".pdf, .csv">
@@ -49,7 +73,14 @@ function UploadFile() {
         </p>
       </Dragger>
       <ButtonDiv>
-        <Button type="primary">Submit</Button>
+        <Button
+          type="primary"
+          onClick={clickHandler}
+          disabled={fileList.length === 0}
+          loading={uploading}
+        >
+          {uploading ? 'Uploading...' : 'Upload'}
+        </Button>
       </ButtonDiv>
     </DivStyled>
   );
