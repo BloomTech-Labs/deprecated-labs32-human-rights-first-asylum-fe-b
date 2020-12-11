@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Input, Button, Space } from 'antd';
+import { Input, Button, Space } from 'antd';
+import { Table } from 'ant-table-extensions';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
 import { DivStyled } from './dashboard-styling';
@@ -206,7 +207,18 @@ function Dashboard() {
 
   return (
     <DivStyled>
-      <Table columns={columns} dataSource={data} onChange={onChange} />
+      <Table
+        columns={columns}
+        dataSource={data}
+        onChange={onChange}
+        exportable={true}
+        exportableProps={{
+          fileName: 'Court Data',
+          btnProps: {
+            type: 'primary',
+          },
+        }}
+      />
     </DivStyled>
   );
 }
