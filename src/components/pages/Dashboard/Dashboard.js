@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Input, Button, Space } from 'antd';
-import { Table } from 'ant-table-extensions';
 import Highlighter from 'react-highlight-words';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined, FilePdfOutlined } from '@ant-design/icons';
 import { DivStyled } from './dashboard-styling';
+import { Table } from 'ant-table-extensions';
 
 function Dashboard() {
   const [searchText, setSearchText] = useState('');
@@ -165,6 +165,16 @@ function Dashboard() {
       sorter: (a, b) => a.outcome.localeCompare(b.outcome),
       sortDirections: ['descend', 'ascend'],
     },
+    {
+      title: 'Original Document',
+      dataIndex: 'documentId',
+      key: 'documentId',
+      render: (text, record) => (
+        <a href={'user/' + record.name}>
+          <FilePdfOutlined />
+        </a>
+      ),
+    },
   ];
 
   // ----------------
@@ -176,6 +186,7 @@ function Dashboard() {
       caseId: 32,
       country: 'United States',
       outcome: 'Pending',
+      documentId: 1,
     },
     {
       key: '2',
@@ -183,6 +194,7 @@ function Dashboard() {
       caseId: 42,
       country: 'Ukraine',
       outcome: 'Granted',
+      documentId: 2,
     },
     {
       key: '3',
@@ -190,6 +202,7 @@ function Dashboard() {
       caseId: 32,
       country: 'Nigeria',
       outcome: 'Denied',
+      documentId: 5,
     },
     {
       key: '4',
@@ -197,6 +210,7 @@ function Dashboard() {
       caseId: 32,
       country: 'Ghana',
       outcome: 'Denied',
+      documentId: 4,
     },
   ];
 
