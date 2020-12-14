@@ -219,6 +219,33 @@ function Dashboard() {
     console.log('params', pagination, filters, sorter, extra);
   }
 
+  const fields = {
+    name: {
+      header: 'Full Name',
+      formatter: fieldValue => {
+        return fieldValue;
+      },
+    },
+    caseId: {
+      header: 'Case ID',
+      formatter: fieldValue => {
+        return fieldValue;
+      },
+    },
+    country: {
+      header: 'Country of Origin',
+      formatter: fieldValue => {
+        return fieldValue;
+      },
+    },
+    outcome: {
+      header: 'Outcome',
+      formatter: fieldValue => {
+        return fieldValue;
+      },
+    },
+  };
+
   return (
     <DivStyled>
       <Table
@@ -228,6 +255,7 @@ function Dashboard() {
         exportable={true}
         exportableProps={{
           fileName: 'Court Data',
+          fields,
           btnProps: {
             type: 'primary',
           },
