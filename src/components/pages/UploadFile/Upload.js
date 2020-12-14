@@ -24,7 +24,7 @@ function UploadFile() {
       setFileList([...fileList, file]);
       return false;
     },
-    fileList,
+
     onChange(info) {
       const { status } = info.file;
       if (status !== 'uploading') {
