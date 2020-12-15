@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
-import { SearchOutlined, FilePdfOutlined } from '@ant-design/icons';
+import {
+  SearchOutlined,
+  FilePdfOutlined,
+  DownloadOutlined,
+} from '@ant-design/icons';
 import { DivStyled } from './dashboard-styling';
 import { Table } from 'ant-table-extensions';
 
@@ -166,13 +170,18 @@ function Dashboard() {
       sortDirections: ['descend', 'ascend'],
     },
     {
-      title: 'Original Document',
+      title: '',
       dataIndex: 'documentId',
       key: 'documentId',
       render: (text, record) => (
-        <a href={'user/' + record.name}>
-          <FilePdfOutlined />
-        </a>
+        <div>
+          <a href={'user/' + record.name}>
+            <FilePdfOutlined style={{ margin: '0 10%' }} />
+          </a>
+          <a href={'user/' + record.name}>
+            <DownloadOutlined style={{ margin: '0 10%' }} />
+          </a>
+        </div>
       ),
     },
   ];
