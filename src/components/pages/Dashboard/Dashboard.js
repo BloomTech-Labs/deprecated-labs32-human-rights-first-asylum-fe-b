@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
+import { PDFModal } from '../PDFModal';
 import {
   SearchOutlined,
   FilePdfOutlined,
@@ -270,6 +271,7 @@ function Dashboard() {
           },
         }}
       />
+      <PDFModal />
     </DivStyled>
   );
 }
