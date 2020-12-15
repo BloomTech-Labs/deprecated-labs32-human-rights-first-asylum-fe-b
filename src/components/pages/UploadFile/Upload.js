@@ -44,7 +44,10 @@ function UploadFile() {
     setUploading(true);
 
     axios
-      .post('https://www.mocky.io/v2/5cc8019d300000980a055e76', formData)
+      .post(
+        'ec2-18-223-205-4.us-east-2.compute.amazonaws.com:8000/cases/add',
+        formData
+      )
       .then(res => {
         setFileList([]);
         message.success('Upload Successful');
