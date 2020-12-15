@@ -1,30 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Upload, message, Button } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
-import { DivStyled, ButtonDiv } from './upload-styling';
-import axios from 'axios';
+import { DivStyled } from './upload-styling';
 
 const { Dragger } = Upload;
 
 function UploadFile() {
-  const [fileList, setFileList] = useState([]);
-  const [uploading, setUploading] = useState(false);
-
   const props = {
     name: 'file',
-    multiple: false,
+    multiple: true,
     showDownloadIcon: true,
-    onRemove(file) {
-      const index = fileList.indexOf(file);
-      const newFileList = fileList.slice();
-      newFileList.splice(index, 1);
-      setFileList(newFileList);
-    },
-    beforeUpload(file) {
-      setFileList([...fileList, file]);
-      return false;
-    },
-
+    action: 'https://hrf-asylum-team-b.herokuapp.com/cases/add',
     onChange(info) {
       const { status } = info.file;
       if (status !== 'uploading') {
@@ -38,30 +24,9 @@ function UploadFile() {
     },
   };
 
-  const clickHandler = () => {
-    const formData = new FormData();
-    fileList.forEach(file => formData.append('files[]', file));
-    setUploading(true);
-
-    axios
-      .post(
-        'ec2-18-223-205-4.us-east-2.compute.amazonaws.com:8000/cases/add',
-        formData
-      )
-      .then(res => {
-        setFileList([]);
-        message.success('Upload Successful');
-      })
-      .catch(err => {
-        message.error('Upload Failed');
-      })
-      .finally(() => {
-        setUploading(false);
-      });
-  };
-
   return (
     <DivStyled>
+      {/* file validation */}
       <Dragger {...props} accept=".pdf, .csv">
         <p className="ant-upload-drag-icon">
           <InboxOutlined />
@@ -75,16 +40,6 @@ function UploadFile() {
           <p>Upload .pdf or .csv files only</p>
         </p>
       </Dragger>
-      <ButtonDiv>
-        <Button
-          type="primary"
-          onClick={clickHandler}
-          disabled={fileList.length === 0}
-          loading={uploading}
-        >
-          {uploading ? 'Uploading...' : 'Upload'}
-        </Button>
-      </ButtonDiv>
     </DivStyled>
   );
 }

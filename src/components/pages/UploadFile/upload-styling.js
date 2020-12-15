@@ -8,7 +8,3 @@ export const DivStyled = styled.div`
   width: 90%;
   padding: 2%;
 `;
-
-export const ButtonDiv = styled.div`
-  padding: 2%;
-`;
