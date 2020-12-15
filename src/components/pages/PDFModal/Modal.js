@@ -3,6 +3,7 @@ import { Modal, Button } from 'antd';
 import { Viewer, Worker } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import { getFilePlugin } from '@react-pdf-viewer/get-file';
+import { FilePdfOutlined } from '@ant-design/icons';
 
 const PDFModal = () => {
   const [visible, setVisible] = useState(false);
@@ -12,9 +13,9 @@ const PDFModal = () => {
   return (
     <>
       <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.5.207/build/pdf.worker.min.js">
-        <Button type="primary" onClick={() => setVisible(true)}>
+        <FilePdfOutlined type="primary" onClick={() => setVisible(true)}>
           Open Modal of 1000px width
-        </Button>
+        </FilePdfOutlined>
         <Modal
           title="Modal 1000px width"
           centered

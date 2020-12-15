@@ -176,10 +176,10 @@ function Dashboard() {
       key: 'documentId',
       render: (text, record) => (
         <div>
-          <a href={'user/' + record.name}>
-            <FilePdfOutlined style={{ margin: '0 10%' }} />
+          <a href="#">
+            <PDFModal />
           </a>
-          <a href={'user/' + record.name}>
+          <a href="#">
             <DownloadOutlined style={{ margin: '0 10%' }} />
           </a>
         </div>
@@ -271,7 +271,6 @@ function Dashboard() {
           },
         }}
       />
-      <PDFModal />
     </DivStyled>
   );
 }
