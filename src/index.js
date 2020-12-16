@@ -21,6 +21,7 @@ import { config } from './utils/oktaConfig';
 import { LoadingComponent, Header, Footer } from './components/common';
 import GlobalStyles from './styles/GlobalStyles';
 import Typography from './styles/Typography';
+import { UploadFile } from './components/pages/UploadFile';
 
 ReactDOM.render(
   <Router>
@@ -52,6 +53,7 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
+        <Route path="/upload" component={UploadFile} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
         <SecureRoute
           path="/"

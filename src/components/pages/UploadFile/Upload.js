@@ -10,7 +10,7 @@ function UploadFile() {
     name: 'file',
     multiple: true,
     showDownloadIcon: true,
-    action: 'https://hrf-asylum-team-b.herokuapp.com/cases/add',
+    action: 'https://asylum-b-api.herokuapp.com/insert',
     onChange(info) {
       const { status } = info.file;
       if (status !== 'uploading') {
