@@ -6,8 +6,8 @@ import {
   useHistory,
   Switch,
 } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
-
 import 'antd/dist/antd.less';
 
 import { NotFoundPage } from './components/pages/NotFound';
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      <Header />
+      {useRouteMatch('/login')?.isExact ? null : <Header />}
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />

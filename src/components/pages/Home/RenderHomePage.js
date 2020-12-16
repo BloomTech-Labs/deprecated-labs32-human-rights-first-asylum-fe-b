@@ -4,6 +4,7 @@ import { Button } from '../../common';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
+  console.log(props);
   return (
     <div>
       <h1>Hi {userInfo.name} Welcome to Labs Basic SPA</h1>

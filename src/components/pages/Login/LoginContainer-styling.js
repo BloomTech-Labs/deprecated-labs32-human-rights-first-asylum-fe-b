@@ -15,5 +15,13 @@ export const StyledLogin = styled.div`
     align-items: center;
     margin: 0 auto;
     padding-bottom: 20%;
+
+    #okta-sign-in.auth-container.main-container {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .o-form-head {
+      color: red;
+    }
   }
 `;

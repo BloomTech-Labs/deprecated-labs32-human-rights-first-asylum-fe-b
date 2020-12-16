@@ -8,6 +8,7 @@ import { config } from '../../../utils/oktaConfig';
 const LoginContainer = () => {
   useEffect(() => {
     const { pkce, issuer, clientId, redirectUri, scopes } = config;
+    console.log('id: ', clientId);
     // destructure your config so that you can pass it into the required fields in your widget.
     const widget = new OktaSignIn({
       baseUrl: issuer ? issuer.split('/oauth2')[0] : '',
