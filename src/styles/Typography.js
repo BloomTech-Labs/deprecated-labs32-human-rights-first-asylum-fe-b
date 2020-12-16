@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const Typography = createGlobalStyle`
     html {
         font-family: Helvetica, Arial, sans-serif;
-        color: #1f1f1f;
+        color: var(--font);
         font-size: 62.5%;
     }
 `;
