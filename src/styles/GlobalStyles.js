@@ -2,9 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --primary: #d6e4ff;
+    --primary: #002D75;
+    --secondary: #FF5900;
     --font: #1f1f1f;
-    --white: #fff;
+    --white: #ffffff;
   }
 
   html {
