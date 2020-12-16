@@ -19,6 +19,8 @@ import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent, Header, Footer } from './components/common';
+import GlobalStyles from './styles/GlobalStyles';
+import Typography from './styles/Typography';
 
 ReactDOM.render(
   <Router>
@@ -42,6 +44,9 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
+      <GlobalStyles />
+      <Typography />
+
       <Header />
       <Switch>
         <Route path="/login" component={LoginPage} />
