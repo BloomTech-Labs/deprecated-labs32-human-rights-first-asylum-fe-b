@@ -10,7 +10,10 @@ const Header = () => {
     <>
       <StyledHeader>
         <Title>Human Rights First</Title>
-        <Menu mode="horizontal">
+        <Menu
+          mode="horizontal"
+          style={{ backgroundColor: 'inherit', border: 'none' }}
+        >
           <Menu.Item>Who We Are</Menu.Item>
           <Menu.Item>
             <Button type="primary">Upload</Button>
