@@ -8,13 +8,19 @@ const Footer = () => {
       <StyledFooter>
         <Menu mode="horizontal">
           <Menu.Item>
-            <a href="#">Contact</a>
+            <a href="#" style={{ color: 'white' }}>
+              Contact
+            </a>
           </Menu.Item>
           <Menu.Item>
-            <a href="#">Privacy</a>
+            <a href="#" style={{ color: 'white' }}>
+              Privacy
+            </a>
           </Menu.Item>
           <Menu.Item>
-            <a href="#">Terms</a>
+            <a href="#" style={{ color: 'white' }}>
+              Terms
+            </a>
           </Menu.Item>
         </Menu>
       </StyledFooter>
