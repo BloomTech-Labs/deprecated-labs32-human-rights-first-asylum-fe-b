@@ -6,6 +6,7 @@ import {
   useHistory,
   Switch,
 } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 
 import 'antd/dist/antd.less';
@@ -20,6 +21,8 @@ import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
 import { Dashboard } from './components/pages/Dashboard';
 import { LoadingComponent, Header, Footer } from './components/common';
+import GlobalStyles from './styles/GlobalStyles';
+import Typography from './styles/Typography';
 
 ReactDOM.render(
   <Router>
@@ -43,7 +46,10 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      <Header />
+      <GlobalStyles />
+      <Typography />
+
+      {useRouteMatch('/login')?.isExact ? null : <Header />}
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/implicit/callback" component={LoginCallback} />
