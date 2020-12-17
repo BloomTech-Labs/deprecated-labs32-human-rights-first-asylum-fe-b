@@ -14,10 +14,10 @@ const PDFModal = () => {
     <>
       <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.5.207/build/pdf.worker.min.js">
         <FilePdfOutlined type="primary" onClick={() => setVisible(true)}>
-          Open Modal of 1000px width
+          Preview
         </FilePdfOutlined>
         <Modal
-          title="Modal 1000px width"
+          title="Preview"
           centered
           visible={visible}
           onOk={() => setVisible(false)}

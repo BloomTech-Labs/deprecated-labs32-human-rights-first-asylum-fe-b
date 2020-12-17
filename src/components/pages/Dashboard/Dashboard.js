@@ -27,9 +27,6 @@ function Dashboard() {
     }) => (
       <div style={{ padding: 8 }}>
         <Input
-          // ref={node => {
-          //   var searchInput = node;
-          // }}
           placeholder={`Search ${dataIndex}`}
           value={selectedKeys[0]}
           onChange={e =>
@@ -68,11 +65,6 @@ function Dashboard() {
             .toLowerCase()
             .includes(value.toLowerCase())
         : '',
-    // onFilterDropdownVisibleChange: visible => {
-    //   if (visible) {
-    //     setTimeout(() => searchInput.select(), 100);
-    //   }
-    // },
     render: text =>
       searchedColumn === dataIndex ? (
         <Highlighter
