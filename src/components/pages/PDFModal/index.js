@@ -1,1 +1,1 @@
-export { default as PDFModal } from './Modal';
+export { PDFModal as default } from './Modal';

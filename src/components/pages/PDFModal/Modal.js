@@ -5,7 +5,7 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import { getFilePlugin } from '@react-pdf-viewer/get-file';
 import { FilePdfOutlined } from '@ant-design/icons';
 
-const PDFModal = () => {
+export const PDFModal = () => {
   const [visible, setVisible] = useState(false);
   const getFilePluginInstance = getFilePlugin();
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
@@ -37,5 +37,3 @@ const PDFModal = () => {
     </>
   );
 };
-
-export default PDFModal;
