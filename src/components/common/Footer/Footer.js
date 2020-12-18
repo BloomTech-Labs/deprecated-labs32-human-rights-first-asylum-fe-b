@@ -8,17 +8,17 @@ const Footer = () => {
       <StyledFooter>
         <Menu mode="horizontal">
           <Menu.Item>
-            <a href="#" className="anchor-footer">
+            <a href="#" style={{ color: 'white' }}>
               Contact
             </a>
           </Menu.Item>
           <Menu.Item>
-            <a href="#" className="anchor-footer">
+            <a href="#" style={{ color: 'white' }}>
               Privacy
             </a>
           </Menu.Item>
           <Menu.Item>
-            <a href="#" className="anchor-footer">
+            <a href="#" style={{ color: 'white' }}>
               Terms
             </a>
           </Menu.Item>

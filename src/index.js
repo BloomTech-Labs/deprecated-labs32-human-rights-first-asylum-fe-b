@@ -19,6 +19,7 @@ import { HomePage } from './components/pages/Home';
 import { LandingPage } from './components/pages/Landing';
 import { ExampleDataViz } from './components/pages/ExampleDataViz';
 import { config } from './utils/oktaConfig';
+import { Dashboard } from './components/pages/Dashboard';
 import { LoadingComponent, Header, Footer } from './components/common';
 import GlobalStyles from './styles/GlobalStyles';
 import Typography from './styles/Typography';
@@ -55,6 +56,7 @@ function App() {
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
         <Route path="/upload" component={UploadFile} />
+        <Route path="/dashboard" component={Dashboard} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
         <SecureRoute
           path="/"
