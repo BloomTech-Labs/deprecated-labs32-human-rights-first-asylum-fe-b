@@ -4,4 +4,7 @@ export const DivStyled = styled.div`
   margin: 0 auto;
   width: 90%;
   padding: 2%;
+  span {
+    color: var(--font);
+  }
 `;
