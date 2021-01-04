@@ -6,9 +6,8 @@ const Logout = () => {
   const { authService } = useOktaAuth();
 
   const logout = async () => {
-    // Will redirect to Okta to end the session then redirect back to the configured `postLogoutRedirectUri`
+    // Signs users out of Okta by ending their session on the Okta Authorization Server
     await authService.logout('/');
-    console.log('working');
   };
 
   return (
