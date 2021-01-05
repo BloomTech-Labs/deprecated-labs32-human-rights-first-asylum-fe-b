@@ -7,7 +7,7 @@ export const StyledLogin = styled.div`
   .background-image {
     background-image: url('https://via.placeholder.com/150?text=Placeholder');
     width: 50vw;
-    height: 88vh;
+    height: 100vh;
   }
 
   #sign-in-widget {

@@ -15,6 +15,7 @@ export const StyledHeader = styled(Header)`
   ul {
     // Title component in Ant Design
     margin: auto 0;
+    color: var(--white);
   }
 
   ul {
