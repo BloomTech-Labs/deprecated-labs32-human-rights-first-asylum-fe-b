@@ -23,5 +23,17 @@ export const StyledHeader = styled(Header)`
     width: 40%;
     display: flex;
     justify-content: space-between;
+    font-size: 2rem;
+  }
+
+  button {
+    width: 125px;
+    height: 40px;
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+    margin: 45% auto;
   }
 `;

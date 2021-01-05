@@ -29,7 +29,7 @@ const Header = () => {
           </Menu.Item>
           <Menu.Item>
             <Dropdown overlay={menu}>
-              <Avatar size="large" icon={<UserOutlined />} />
+              <Avatar size={50} icon={<UserOutlined />} />
             </Dropdown>
           </Menu.Item>
         </Menu>
