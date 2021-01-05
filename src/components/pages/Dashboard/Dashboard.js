@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
-import { PDFModal } from '../PDFModal';
 import {
   SearchOutlined,
   FilePdfOutlined,
@@ -9,6 +8,8 @@ import {
 } from '@ant-design/icons';
 import { DivStyled } from './dashboard-styling';
 import { Table } from 'ant-table-extensions';
+
+const PDFModal = lazy(() => import('../PDFModal/index'));
 
 function Dashboard() {
   const [searchText, setSearchText] = useState('');
@@ -169,7 +170,9 @@ function Dashboard() {
       render: (text, record) => (
         <div>
           <a href="#">
-            <PDFModal />
+            <Suspense fallback={null}>
+              <PDFModal />
+            </Suspense>
           </a>
           <a href="#">
             <DownloadOutlined style={{ margin: '0 10%' }} />
