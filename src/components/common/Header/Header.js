@@ -2,13 +2,16 @@ import React from 'react';
 import { Button, Avatar, Typography, Menu, Dropdown } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { StyledHeader } from './Header-styling';
+import Logout from './Logout';
 
 const { Title } = Typography;
 
 const Header = () => {
   const menu = (
     <Menu>
-      <Menu.Item>Logout</Menu.Item>
+      <Menu.Item>
+        <Logout />
+      </Menu.Item>
     </Menu>
   );
 
