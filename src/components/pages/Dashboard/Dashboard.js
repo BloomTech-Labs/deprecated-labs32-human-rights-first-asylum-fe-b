@@ -16,9 +16,10 @@ function Dashboard() {
   const [searchedColumn, setSearchedColumn] = useState('');
   // const [columnData, setColumnData] = useState([]); - to use http data
 
-  // to populate w api call to pull down data
+  // Holdover - to populate w api call to pull down data
   useEffect(() => {}, []);
 
+  // search props
   let getColumnSearchProps = dataIndex => ({
     filterDropdown: ({
       setSelectedKeys,
@@ -179,8 +180,7 @@ function Dashboard() {
     },
   ];
 
-  // ----------------
-
+  // filler data
   const data = [
     {
       key: '1',

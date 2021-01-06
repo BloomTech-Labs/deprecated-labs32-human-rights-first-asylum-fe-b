@@ -25,12 +25,9 @@ export const PDFModal = () => {
           width={1000}
         >
           <Viewer
+            // fileurl is a placeholder until we can get the proper endpoints
             fileUrl="https://human-rights-first-asylum-analysis-documents-fe.s3.amazonaws.com/lulu-book-creation-guide.pdf"
-            plugins={[
-              // Register plugins
-              defaultLayoutPluginInstance,
-              getFilePluginInstance,
-            ]}
+            plugins={[defaultLayoutPluginInstance, getFilePluginInstance]}
           />
         </Modal>
       </Worker>
