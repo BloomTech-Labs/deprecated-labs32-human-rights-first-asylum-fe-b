@@ -12,7 +12,7 @@ function UploadFile() {
     name: 'file',
     multiple: true,
     showDownloadIcon: true,
-    action: '',
+    action: url,
     onChange(info) {
       const { status } = info.file;
       if (status !== 'uploading') {
