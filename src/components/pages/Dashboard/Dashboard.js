@@ -16,9 +16,10 @@ function Dashboard() {
   const [searchedColumn, setSearchedColumn] = useState('');
   // const [columnData, setColumnData] = useState([]); - to use http data
 
-  // to populate w api call to pull down data
+  // Holdover - to populate w api call to pull down data
   useEffect(() => {}, []);
 
+  // search props
   let getColumnSearchProps = dataIndex => ({
     filterDropdown: ({
       setSelectedKeys,
@@ -30,9 +31,9 @@ function Dashboard() {
         <Input
           placeholder={`Search ${dataIndex}`}
           value={selectedKeys[0]}
-          onChange={e =>
-            setSelectedKeys(e.target.value ? [e.target.value] : [])
-          }
+          onChange={e => {
+            setSelectedKeys(e.target.value ? [e.target.value] : []);
+          }}
           onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
           style={{ width: 188, marginBottom: 8, display: 'block' }}
         />
@@ -99,9 +100,6 @@ function Dashboard() {
       width: '30%',
       ...getColumnSearchProps('name'),
       filterMultiple: false,
-      // specify the condition of filtering result
-      // here is that finding the name started with `value`
-      onFilter: (value, record) => record.name.indexOf(value) === 0,
       sorter: (a, b) => a.name.localeCompare(b.name),
       sortDirections: ['descend', 'ascend'],
     },
@@ -182,8 +180,7 @@ function Dashboard() {
     },
   ];
 
-  // ----------------
-
+  // filler data
   const data = [
     {
       key: '1',
