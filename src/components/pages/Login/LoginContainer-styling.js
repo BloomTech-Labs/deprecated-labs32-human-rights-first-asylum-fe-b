@@ -1,13 +1,16 @@
 import styled from 'styled-components';
+import statueOfLiberty from '../../../assets/statueOfLiberty.jpg';
 
 export const StyledLogin = styled.div`
   display: flex;
   justify-content: space-between;
 
   .background-image {
-    background-image: url('https://via.placeholder.com/150?text=Placeholder');
+    background-image: url(${statueOfLiberty});
     width: 50vw;
     height: 100vh;
+    background-position: center;
+    background-size: cover;
   }
 
   #sign-in-widget {
