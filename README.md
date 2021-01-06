@@ -10,8 +10,6 @@ You can find the deployed project hosted on [AWS Amplify](https://b.humanrightsf
 
 ## Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
-
 |                                          [Aurelio Arcabascio](https://github.com/aurelio4)                                          |                                                         [Cory Thomas](https://github.com/Cory-Thomas)                                                         |                                                          [David Gold](https://github.com/davidgoldcode)                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 |   [<img src="https://github-images-public28947589.s3.amazonaws.com/17240632.jpeg" width = "200" />](https://github.com/aurelio4)    | [<img src="https://github-images-public28947589.s3.amazonaws.com/Screen+Shot+2021-01-06+at+12.48.26+PM.png" width = "200" />](https://github.com/Cory-Thomas) | [<img src="https://github-images-public28947589.s3.amazonaws.com/Screen+Shot+2021-01-06+at+12.54.40+PM.png" width = "200"  />](https://github.com/davidgoldcode) |
@@ -21,20 +19,9 @@ You can find the deployed project hosted on [AWS Amplify](https://b.humanrightsf
 <br>
 <br>
 
-🚫 Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
 ![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
-
-- Fork and clone the repo to install it as your own remote.
-  - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to point to your Labs Team Front End Repository.
-- run: `npm install` to download all dependencies.
-- run: `npm start` to start your local development server.
-
-> When using Okta for authentication, the app will need to run locally on port 3000.
 
 ### Key Features
 
@@ -48,39 +35,27 @@ You can find the deployed project hosted on [AWS Amplify](https://b.humanrightsf
 
 #### [Back end](https://github.com/Lambda-School-Labs/human-rights-first-asylum-be-b) built using:
 
-#### 🚫 back end framework goes here
-
 - NodeJS
 - Express
 - Postgres
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+<br>
 
 # APIs
 
 ## Authentication API here
 
-🚫Replace text below with a description of the API
+> To be updated
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
-
-## Misc API here
-
-🚫Replace text below with a description of the API
-
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
+<br>
 
 # Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+- Fork and clone the repo to install it as your own remote.
+- run: `npm install` to download all dependencies.
+- run: `npm start` to start your local development server.
 
-## Other Scripts
-
-🚫replace these examples with your own
-
-    * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+> The app will run locally on port 3000.
 
 # Contributing
 
