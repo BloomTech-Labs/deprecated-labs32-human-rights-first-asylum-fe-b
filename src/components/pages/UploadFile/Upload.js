@@ -4,13 +4,15 @@ import { InboxOutlined } from '@ant-design/icons';
 import { DivStyled } from './upload-styling';
 
 const { Dragger } = Upload;
+const url =
+  'http://asylum-hrf-team-b.eba-2bq2qkfg.us-east-1.elasticbeanstalk.com/insert';
 
 function UploadFile() {
   const props = {
     name: 'file',
     multiple: true,
     showDownloadIcon: true,
-    action: 'https://asylum-b-api.herokuapp.com/insert',
+    action: url,
     onChange(info) {
       const { status } = info.file;
       if (status !== 'uploading') {
