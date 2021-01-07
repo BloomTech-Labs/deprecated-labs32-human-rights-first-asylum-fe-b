@@ -54,7 +54,7 @@ function App() {
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/upload" component={UploadFile} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
-        <Route path="/dashboard" component={Dashboard} />
+        <SecureRoute path="/" exact component={() => <Dashboard />} />
         <SecureRoute path="/example-list" component={ExampleListPage} />
         <SecureRoute path="/profile-list" component={ProfileListPage} />
         <SecureRoute path="/datavis" component={ExampleDataViz} />
