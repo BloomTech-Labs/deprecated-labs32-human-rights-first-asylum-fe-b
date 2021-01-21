@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { StyledLogin } from './LoginContainer-styling';
 import OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
+import hrf_logo from '../../../assets/hrf_logo.jpg';
+import hrf_centered_logo from '../../../assets/hrf_centered_logo.jpg';
 
 import { config } from '../../../utils/oktaConfig';
 
@@ -18,7 +20,7 @@ const LoginContainer = () => {
       },
       features: { registration: false },
       // turning this feature on allows your widget to use Okta for user registration
-      logo: 'path-to-your-logo',
+      logo: hrf_logo,
       // add your custom logo to your signing/register widget here.
       i18n: {
         en: {
