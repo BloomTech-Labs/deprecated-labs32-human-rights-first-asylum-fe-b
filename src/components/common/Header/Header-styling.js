@@ -22,18 +22,18 @@ export const StyledHeader = styled(Header)`
     // Menu component in Ant Design
     width: 40%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     font-size: 2rem;
   }
 
   button {
-    width: 125px;
-    height: 40px;
+    width: 90px;
+    height: 35px;
   }
 
   svg {
     width: 25px;
     height: 25px;
-    margin: 45% auto;
+    margin-top: 20px;
   }
 `;

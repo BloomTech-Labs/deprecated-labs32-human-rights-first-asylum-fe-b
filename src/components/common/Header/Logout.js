@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import { LogoutOutlined } from '@ant-design/icons';
 import { useOktaAuth } from '@okta/okta-react';
 
 const Logout = () => {
@@ -11,9 +11,7 @@ const Logout = () => {
   };
 
   return (
-    <Button onClick={() => logout()} type="primary">
-      Logout
-    </Button>
+    <LogoutOutlined onClick={() => logout()} type="primary"></LogoutOutlined>
   );
 };
 
