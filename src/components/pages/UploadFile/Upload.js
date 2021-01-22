@@ -4,6 +4,7 @@ import { InboxOutlined } from '@ant-design/icons';
 import { DivStyled } from './upload-styling';
 
 const { Dragger } = Upload;
+// Is this the right url?
 const url =
   'http://asylum-hrf-team-b.eba-2bq2qkfg.us-east-1.elasticbeanstalk.com/insert';
 
@@ -25,6 +26,7 @@ function UploadFile() {
       }
     },
   };
+  // Should we have a form on this page as well?
 
   return (
     <DivStyled>
@@ -47,3 +49,5 @@ function UploadFile() {
 }
 
 export default UploadFile;
+
+// Notes:  Not sure why when the upload button is clicked the url doesn't change when it looks like it is linked in switch.
