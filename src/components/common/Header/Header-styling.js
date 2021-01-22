@@ -17,6 +17,19 @@ export const StyledHeader = styled(Header)`
     margin: auto 0;
     color: var(--white);
   }
+  // title flex
+  div {
+    display: flex;
+  }
+  //title font
+  .titleFont {
+    font-family: 'Crimson Text', serif;
+  }
+  //span italic for "first"
+  .italic {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+  }
 
   ul {
     // Menu component in Ant Design
@@ -26,14 +39,23 @@ export const StyledHeader = styled(Header)`
     font-size: 2rem;
   }
 
+  //upload button
   button {
     width: 90px;
     height: 35px;
   }
 
+  //logout button
   svg {
     width: 25px;
     height: 25px;
     margin-top: 20px;
+  }
+
+  //logo png
+  img {
+    height: 60px;
+    margin: auto 0;
+    padding: 4px;
   }
 `;
