@@ -1,11 +1,7 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
-import {
-  SearchOutlined,
-  FilePdfOutlined,
-  DownloadOutlined,
-} from '@ant-design/icons';
+import { SearchOutlined, DownloadOutlined } from '@ant-design/icons';
 import { DivStyled } from './dashboard-styling';
 import { Table } from 'ant-table-extensions';
 
@@ -165,14 +161,14 @@ function Dashboard() {
       title: '',
       dataIndex: 'documentId',
       key: 'documentId',
-      render: (text, record) => (
+      render: (text, record, title) => (
         <div>
-          <a href="#">
+          <a href={`http://www.hrfa.com/${title}`}>
             <Suspense fallback={null}>
               <PDFModal />
             </Suspense>
           </a>
-          <a href="#">
+          <a href={`http://www.hrfa.com/${title}/outlined`}>
             <DownloadOutlined style={{ margin: '0 10%' }} />
           </a>
         </div>
