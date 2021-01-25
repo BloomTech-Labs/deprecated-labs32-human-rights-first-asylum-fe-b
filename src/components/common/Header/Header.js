@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Avatar, Typography, Menu, Dropdown } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { StyledHeader } from './Header-styling';
@@ -25,7 +26,9 @@ const Header = () => {
         >
           <Menu.Item>Who We Are</Menu.Item>
           <Menu.Item>
-            <Button type="primary">Upload</Button>
+            <Link to="/upload">
+              <Button type="primary">Upload</Button>
+            </Link>
           </Menu.Item>
           <Menu.Item>
             <Dropdown overlay={menu}>

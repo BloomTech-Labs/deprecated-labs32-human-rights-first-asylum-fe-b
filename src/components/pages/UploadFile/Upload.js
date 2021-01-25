@@ -9,29 +9,43 @@ const url =
   'http://asylum-hrf-team-b.eba-2bq2qkfg.us-east-1.elasticbeanstalk.com/insert';
 
 function UploadFile() {
-  const props = {
-    name: 'file',
-    multiple: true,
-    showDownloadIcon: true,
-    action: url,
-    onChange(info) {
-      const { status } = info.file;
-      if (status !== 'uploading') {
-        console.log(info.file, info.fileList);
-      }
-      if (status === 'done') {
-        message.success(`${info.file.name} file uploaded successfully.`);
-      } else if (status === 'error') {
-        message.error(`${info.file.name} file upload failed.`);
-      }
-    },
+  // const props = {
+  //   name: 'file',
+  //   multiple: true,
+  //   showDownloadIcon: true,
+  //   action: url,
+  //   onChange(info) {
+  //     const { status } = info.file;
+  //     if (status !== 'uploading') {
+  //       console.log(info.file, info.fileList);
+  //     }
+  //     if (status === 'done') {
+  //       message.success(`${info.file.name} file uploaded successfully.`);
+  //     } else if (status === 'error') {
+  //       message.error(`${info.file.name} file upload failed.`);
+  //     }
+  //   },
+  // };
+
+  const [file, setFile] = React.useState('');
+
+  function handleUpload(event) {
+    setFile(event.target.files[0]);
+
+    // Server code here?
+  }
+  const ImageThumb = ({ image }) => {
+    return <img src={URL.createObjectURL(image)} alt={image.name} />;
   };
-  // Should we have a form on this page as well?
+
+  function handleSubmit() {
+    // Submit all form information here?
+  }
 
   return (
     <DivStyled>
       {/* file validation */}
-      <Dragger {...props} accept=".pdf, .csv">
+      {/* <Dragger {...props} accept=".pdf, .csv">
         <p className="ant-upload-drag-icon">
           <InboxOutlined />
         </p>
@@ -43,7 +57,19 @@ function UploadFile() {
           company data or other band files.{' '}
           <p>Upload .pdf or .csv files only</p>
         </p>
-      </Dragger>
+      </Dragger> */}
+      <form>
+        <input type="file" onChange={handleUpload} />
+        <p>Filename: {file.name}</p>
+        <p>File type: {file.type}</p>
+        <p>File size: {file.size} bytes</p>
+        {file && <ImageThumb image={file} />}
+        <label>Judge</label>
+        <label>Country of Origin</label>
+        <label>Outcome</label>
+        <label>Tags</label>
+        <button>Submit</button>
+      </form>
     </DivStyled>
   );
 }
