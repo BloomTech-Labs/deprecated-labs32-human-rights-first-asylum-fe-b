@@ -64,10 +64,18 @@ function UploadFile() {
         <p>File type: {file.type}</p>
         <p>File size: {file.size} bytes</p>
         {file && <ImageThumb image={file} />}
-        <label>Judge</label>
-        <label>Country of Origin</label>
-        <label>Outcome</label>
-        <label>Tags</label>
+        <label>Judge: </label>
+        <input type="text" />
+        <br></br>
+        <label>Country of Origin: </label>
+        <input type="text" />
+        <br></br>
+        <label>Outcome: </label>
+        <input type="text" />
+        <br></br>
+        <label>Tags: </label>
+        <input type="dropdown" />
+        <br></br>
         <button>Submit</button>
       </form>
     </DivStyled>
