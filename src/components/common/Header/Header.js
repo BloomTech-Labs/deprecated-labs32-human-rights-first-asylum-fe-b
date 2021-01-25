@@ -1,36 +1,30 @@
 import React from 'react';
-import { Button, Avatar, Typography, Menu, Dropdown } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { Button, Typography, Menu } from 'antd';
 import { StyledHeader } from './Header-styling';
 import Logout from './Logout';
+import Logo from '../../../assets/hrf-logo.png';
 
 const { Title } = Typography;
 
 const Header = () => {
-  const menu = (
-    <Menu>
-      <Menu.Item>
-        <Logout />
-      </Menu.Item>
-    </Menu>
-  );
-
   return (
     <>
       <StyledHeader>
-        <Title>Human Rights First</Title>
+        <div>
+          <img src={Logo} alt="Human Rights First Logo"></img>
+          <Title className="titleFont">
+            human rights <span className="italic">first</span>
+          </Title>
+        </div>
         <Menu
           mode="horizontal"
           style={{ backgroundColor: 'inherit', border: 'none' }}
         >
-          <Menu.Item>Who We Are</Menu.Item>
           <Menu.Item>
             <Button type="primary">Upload</Button>
           </Menu.Item>
           <Menu.Item>
-            <Dropdown overlay={menu}>
-              <Avatar size={50} icon={<UserOutlined />} />
-            </Dropdown>
+            <Logout />
           </Menu.Item>
         </Menu>
       </StyledHeader>
