@@ -74,7 +74,7 @@ function UploadFile() {
         <input type="text" />
         <br></br>
         <label>Tags: </label>
-        <input type="dropdown" />
+        <input type="checkbox" />
         <br></br>
         <button>Submit</button>
       </form>

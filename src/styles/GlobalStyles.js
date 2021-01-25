@@ -4,7 +4,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --primary: #032854;
     --secondary: #AC4018;
-    --font: #1f1f1f;
+    --font: #000000;
     --white: #ffffff;
   }
 
