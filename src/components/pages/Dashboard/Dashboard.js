@@ -2,8 +2,8 @@ import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import {
+  FolderAddOutlined,
   SearchOutlined,
-  FilePdfOutlined,
   DownloadOutlined,
 } from '@ant-design/icons';
 import { DivStyled } from './dashboard-styling';
@@ -165,15 +165,26 @@ function Dashboard() {
       title: '',
       dataIndex: 'documentId',
       key: 'documentId',
-      render: (text, record) => (
-        <div>
+      render: (text, record, title) => (
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <a
+            href="#"
+            //ONCLICK LOGIC TO BE ADDED TO MAKE POST REQUEST TO COLLECTIONS DATA
+          >
+            <FolderAddOutlined
+              style={{ margin: '0% 5%' }}
+              title="Add to collections"
+            />
+          </a>
+
           <a href="#">
             <Suspense fallback={null}>
-              <PDFModal />
+              <PDFModal style={{ margin: '0% 5%' }} />
             </Suspense>
           </a>
+
           <a href="#">
-            <DownloadOutlined style={{ margin: '0 10%' }} />
+            <DownloadOutlined style={{ margin: '0% 5%' }} />
           </a>
         </div>
       ),

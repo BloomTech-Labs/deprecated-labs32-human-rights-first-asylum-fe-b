@@ -12,7 +12,7 @@
     "@react-pdf-viewer/default-layout": "^2.2.1",
     "@react-pdf-viewer/get-file": "^2.2.1",
     "ant-table-extensions": "^1.1.7",
-    "antd": "^4.4.3",
+    "antd": "^4.10.3",
     "axios": "^0.19.2",
     "craco-less": "^1.17.0",
     "dotenv": "^8.2.0",
