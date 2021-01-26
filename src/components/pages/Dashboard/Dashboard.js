@@ -270,7 +270,7 @@ function Dashboard() {
           fileName: 'Court Data',
           fields,
           btnProps: {
-            type: 'primary',
+            type: 'secondary',
           },
         }}
       />
