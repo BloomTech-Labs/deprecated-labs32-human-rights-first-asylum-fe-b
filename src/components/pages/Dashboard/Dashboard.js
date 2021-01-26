@@ -1,7 +1,11 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
-import { SearchOutlined, DownloadOutlined } from '@ant-design/icons';
+import {
+  FolderAddOutlined,
+  SearchOutlined,
+  DownloadOutlined,
+} from '@ant-design/icons';
 import { DivStyled } from './dashboard-styling';
 import { Table } from 'ant-table-extensions';
 
@@ -162,14 +166,25 @@ function Dashboard() {
       dataIndex: 'documentId',
       key: 'documentId',
       render: (text, record, title) => (
-        <div>
-          <a href={`http://www.hrfa.com/${title}`}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <a
+            href="#"
+            //ONCLICK LOGIC TO BE ADDED TO MAKE POST REQUEST TO COLLECTIONS DATA
+          >
+            <FolderAddOutlined
+              style={{ margin: '0% 5%' }}
+              title="Add to collections"
+            />
+          </a>
+
+          <a href="#">
             <Suspense fallback={null}>
-              <PDFModal />
+              <PDFModal style={{ margin: '0% 5%' }} />
             </Suspense>
           </a>
-          <a href={`http://www.hrfa.com/${title}/outlined`}>
-            <DownloadOutlined style={{ margin: '0 10%' }} />
+
+          <a href="#">
+            <DownloadOutlined style={{ margin: '0% 5%' }} />
           </a>
         </div>
       ),
