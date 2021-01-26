@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Typography, Menu } from 'antd';
 import { StyledHeader } from './Header-styling';
 import Logout from './Logout';
@@ -21,7 +22,9 @@ const Header = () => {
           style={{ backgroundColor: 'inherit', border: 'none' }}
         >
           <Menu.Item>
-            <Button type="primary">Upload</Button>
+            <Link to="/upload">
+              <Button type="primary">Upload</Button>
+            </Link>
           </Menu.Item>
           <Menu.Item>
             <Logout />

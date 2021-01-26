@@ -21,7 +21,7 @@ import { Dashboard } from './components/pages/Dashboard';
 import { Header, Footer } from './components/common';
 import GlobalStyles from './styles/GlobalStyles';
 import Typography from './styles/Typography';
-import { UploadFile } from './components/pages/UploadFile';
+import UploadFile from './components/pages/UploadFile/Upload';
 
 ReactDOM.render(
   <Router>
