@@ -3,6 +3,7 @@ import { Button, Avatar, Typography, Menu, Dropdown } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { StyledHeader } from './Header-styling';
 import Logout from './Logout';
+import Collections from './Collections/Collections.js';
 
 const { Title } = Typography;
 
@@ -34,6 +35,7 @@ const Header = () => {
           </Menu.Item>
         </Menu>
       </StyledHeader>
+      <Collections />
     </>
   );
 };
