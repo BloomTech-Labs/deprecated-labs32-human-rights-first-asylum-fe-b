@@ -43,6 +43,8 @@ export const StyledHeader = styled(Header)`
   button {
     width: 90px;
     height: 35px;
+    text-align: center;
+    vertical-align: center;
   }
 
   //logout button
