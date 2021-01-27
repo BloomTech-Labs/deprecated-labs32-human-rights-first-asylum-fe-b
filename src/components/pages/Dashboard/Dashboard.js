@@ -27,6 +27,7 @@ function Dashboard() {
       confirm,
       clearFilters,
     }) => (
+      // this is the filter box with search bar, search button, and reset button
       <div style={{ padding: 8 }}>
         <Input
           placeholder={`Search ${dataIndex}`}
@@ -57,9 +58,7 @@ function Dashboard() {
         </Space>
       </div>
     ),
-    filterIcon: filtered => (
-      <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />
-    ),
+    filterIcon: filtered => <SearchOutlined style={{ fontSize: 18 }} />,
     onFilter: (value, record) =>
       record[dataIndex]
         ? record[dataIndex]

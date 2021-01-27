@@ -23,6 +23,11 @@ const Header = () => {
           style={{ backgroundColor: 'inherit', border: 'none' }}
         >
           <Menu.Item>
+            <Link to="/">
+              <Button type="secondary">Dashboard</Button>
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
             <Link to="/upload">
               <Button type="primary">Upload</Button>
             </Link>

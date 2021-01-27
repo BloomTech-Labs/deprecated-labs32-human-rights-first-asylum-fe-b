@@ -41,7 +41,7 @@ export const StyledHeader = styled(Header)`
 
   //upload button
   button {
-    width: 90px;
+    min-width: 90px;
     height: 35px;
   }
 
