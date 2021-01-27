@@ -69,15 +69,16 @@ function UploadFile() {
         <h1>Upload a Document</h1>
         <hr />
         <br />
-        {/* <Form.Item> */}
         <Input type="file" onChange={handleUpload} />
-        {/* </Form.Item> */}
 
         <p>Filename: {file.name}</p>
         <p>File type: {file.type}</p>
         <p>File size: {file.size} bytes</p>
-        <Form.Item>{file && <ImageThumb image={file} />}</Form.Item>
-
+        {/* <Form.Item>
+        {file && <ImageThumb image={file} />}
+        </Form.Item> */}
+        <hr />
+        <br />
         <Form.Item>
           <label>Judge: </label>
           <Input type="text" placeholder="Name..." />
@@ -98,11 +99,14 @@ function UploadFile() {
         </Form.Item>
 
         <Form.Item>
-          <label>Tags: </label>
-          <Checkbox>Ethnicity</Checkbox>
-          <Checkbox>Race</Checkbox>
-          <Checkbox>Religion</Checkbox>
-          <Checkbox>Orientation</Checkbox>
+          <div class="tagsitem">
+            <label>Tags: </label>
+            <Checkbox>Ethnicity</Checkbox>
+            <Checkbox>Race</Checkbox>
+            <Checkbox>Religion</Checkbox>
+            <Checkbox>Orientation</Checkbox>
+            <Button>Add New Tag</Button>
+          </div>
         </Form.Item>
 
         <Form.Item>

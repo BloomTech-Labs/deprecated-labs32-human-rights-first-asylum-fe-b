@@ -5,8 +5,7 @@ export const DivStyled = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 90%;
-  padding: 2%;
+  /* padding: 2%; */
 
   img {
     height: 100px;
@@ -16,5 +15,13 @@ export const DivStyled = styled.div`
   h1 {
     color: black;
     text-align: center;
+  }
+
+  .ant-input {
+    width: 550px;
+  }
+
+  .tagsitem {
+    flex-direction: column;
   }
 `;
