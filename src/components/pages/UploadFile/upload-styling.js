@@ -10,6 +10,6 @@ export const DivStyled = styled.div`
 
   img {
     height: 100px;
-    width: 100px;
+    width: auto;
   }
 `;

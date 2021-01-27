@@ -1,7 +1,10 @@
 import React from 'react';
-import { Upload, message } from 'antd';
+import { Upload, message, Form, Button, Input, Checkbox, Select } from 'antd';
 import { InboxOutlined, FilePdfOutlined } from '@ant-design/icons';
+
 import { DivStyled } from './upload-styling';
+
+const { Option } = Select;
 
 const { Dragger } = Upload;
 // Is this the right url?
@@ -42,6 +45,11 @@ function UploadFile() {
     // Submit all form information here?
   }
 
+  const layout = {
+    labelCol: { span: 8 },
+    wrapperCol: { span: 16 },
+  };
+
   return (
     <DivStyled>
       {/* file validation */}
@@ -58,30 +66,51 @@ function UploadFile() {
           <p>Upload .pdf or .csv files only</p>
         </p>
       </Dragger> */}
-      <form>
-        <input type="file" onChange={handleUpload} />
+      <Form {...layout} name="UploadForm" initialValues={{ remember: true }}>
+        <Form.Item>
+          <Input type="file" onChange={handleUpload} />
+        </Form.Item>
+
+        <br />
         <p>Filename: {file.name}</p>
         <p>File type: {file.type}</p>
         <p>File size: {file.size} bytes</p>
-
         {file.type == 'image/png'
           ? file && <ImageThumb image={file} />
           : file && <FilePdfOutlined />}
+        <br />
 
-        <label>Judge: </label>
-        <input type="text" />
-        <br></br>
-        <label>Country of Origin: </label>
-        <input type="text" />
-        <br></br>
-        <label>Outcome: </label>
-        <input type="text" />
-        <br></br>
-        <label>Tags: </label>
-        <input type="checkbox" />
-        <br></br>
-        <button>Submit</button>
-      </form>
+        <Form.Item>
+          <label>Judge: </label>
+          <Input type="text" placeholder="Name..." />
+        </Form.Item>
+
+        <Form.Item>
+          <label>Country of Origin: </label>
+          <Input type="text" placeholder="Country..." />
+        </Form.Item>
+
+        <Form.Item>
+          <label>Outcome: </label>
+          <Select placeholder="Select an outcome..." allowClear>
+            <Option value="granted">Granted</Option>
+            <Option value="denied">Denied</Option>
+            <Option value="pending">Pending</Option>
+          </Select>
+        </Form.Item>
+
+        <Form.Item>
+          <label>Tags: </label>
+          <Checkbox>Ethnicity</Checkbox>
+          <Checkbox>Race</Checkbox>
+          <Checkbox>Religion</Checkbox>
+          <Checkbox>Orientation</Checkbox>
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary">Submit</Button>
+        </Form.Item>
+      </Form>
     </DivStyled>
   );
 }
