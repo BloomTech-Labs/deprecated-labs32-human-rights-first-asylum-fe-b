@@ -1,6 +1,6 @@
 import React from 'react';
 import { Upload, message } from 'antd';
-import { InboxOutlined } from '@ant-design/icons';
+import { InboxOutlined, FilePdfOutlined } from '@ant-design/icons';
 import { DivStyled } from './upload-styling';
 
 const { Dragger } = Upload;
@@ -63,7 +63,11 @@ function UploadFile() {
         <p>Filename: {file.name}</p>
         <p>File type: {file.type}</p>
         <p>File size: {file.size} bytes</p>
-        {file && <ImageThumb image={file} />}
+
+        {file.type == 'image/png'
+          ? file && <ImageThumb image={file} />
+          : file && <FilePdfOutlined />}
+
         <label>Judge: </label>
         <input type="text" />
         <br></br>
