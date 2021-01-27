@@ -66,16 +66,17 @@ function UploadFile() {
         </p>
       </Dragger> */}
       <Form {...layout} name="UploadForm" initialValues={{ remember: true }}>
-        <Form.Item>
-          <Input type="file" onChange={handleUpload} />
-        </Form.Item>
-
+        <h1>Upload a Document</h1>
+        <hr />
         <br />
+        {/* <Form.Item> */}
+        <Input type="file" onChange={handleUpload} />
+        {/* </Form.Item> */}
+
         <p>Filename: {file.name}</p>
         <p>File type: {file.type}</p>
         <p>File size: {file.size} bytes</p>
-        {file && <ImageThumb image={file} />}
-        <br />
+        <Form.Item>{file && <ImageThumb image={file} />}</Form.Item>
 
         <Form.Item>
           <label>Judge: </label>

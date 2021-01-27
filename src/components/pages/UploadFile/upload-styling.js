@@ -12,4 +12,9 @@ export const DivStyled = styled.div`
     height: 100px;
     width: auto;
   }
+
+  h1 {
+    color: black;
+    text-align: center;
+  }
 `;

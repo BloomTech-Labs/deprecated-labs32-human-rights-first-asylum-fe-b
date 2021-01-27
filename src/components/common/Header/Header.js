@@ -38,17 +38,17 @@ const Header = () => {
           mode="horizontal"
           style={{ backgroundColor: 'inherit', border: 'none' }}
         >
-          <Menu.Item>
+          {/* <Menu.Item>
             <Link to="/">
               <Button type="primary">Dashboard</Button>
             </Link>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item>
             <Button type="primary" onClick={showModal}>
               Upload
             </Button>
             <Modal
-              title="Upload"
+              // title="Upload"
               visible={isModalVisible}
               onOk={handleOk}
               onCancel={handleCancel}
