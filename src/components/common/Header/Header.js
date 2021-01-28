@@ -60,6 +60,21 @@ const Header = () => {
           </Menu.Item>
 
           <Menu.Item>
+            <Button type="primary" onClick={showModal}>
+              Upload
+            </Button>
+            <Modal
+              title="Upload"
+              visible={isModalVisible}
+              onOk={handleOk}
+              onCancel={handleCancel}
+              width={600}
+              centered
+            >
+              <UploadFile />
+            </Modal>
+          </Menu.Item>
+          <Menu.Item>
             <Logout />
           </Menu.Item>
         </Menu>

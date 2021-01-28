@@ -1,6 +1,7 @@
 import React from 'react';
 import { Upload, message, Form, Button, Input, Checkbox, Select } from 'antd';
-import { InboxOutlined } from '@ant-design/icons';
+
+import { InboxOutlined, FilePdfOutlined } from '@ant-design/icons';
 import { DivStyled } from './upload-styling';
 
 const { Option } = Select;
@@ -79,6 +80,7 @@ function UploadFile() {
         </Form.Item> */}
         <hr />
         <br />
+
         <Form.Item>
           <label>Judge: </label>
           <Input type="text" placeholder="Name..." />
@@ -107,6 +109,7 @@ function UploadFile() {
             <Checkbox>Orientation</Checkbox>
             <Button>Add New Tag</Button>
           </div>
+
         </Form.Item>
 
         <Form.Item>

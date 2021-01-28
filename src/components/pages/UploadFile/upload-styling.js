@@ -23,5 +23,6 @@ export const DivStyled = styled.div`
 
   .tagsitem {
     flex-direction: column;
+
   }
 `;
