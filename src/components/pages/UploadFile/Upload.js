@@ -10,7 +10,6 @@ import {
   Radio,
 } from 'antd';
 import { InboxOutlined, FilePdfOutlined } from '@ant-design/icons';
-
 import { DivStyled } from './upload-styling';
 
 const { Option } = Select;
@@ -85,6 +84,7 @@ function UploadFile() {
 
         <hr />
         <br />
+
         <Form.Item>
           <label>Judge:</label>
           <Input type="text" placeholder="Name..." />
@@ -149,6 +149,7 @@ function UploadFile() {
             <Button>Add New Tag</Button>
           </div>
         </Form.Item> */}
+
 
         <Form.Item>
           <Button type="primary" block>
