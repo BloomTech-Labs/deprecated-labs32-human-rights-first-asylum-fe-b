@@ -7,15 +7,16 @@ export const StyledHeader = styled(Header)`
   position: sticky;
   top: 0;
   justify-content: space-between;
-  background-color: var(--primary);
+  background-color: var(--white);
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.36);
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.36);
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.2);
   height: 10vh;
   h1,
   ul {
     // Title component in Ant Design
     margin: auto 0;
-    color: var(--white);
+    color: var(--primary);
+    padding-bottom: 5px;
   }
   // title flex
   div {

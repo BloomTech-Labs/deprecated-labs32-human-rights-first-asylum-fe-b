@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Button, Typography, Menu } from 'antd';
 import { StyledHeader } from './Header-styling';
 import Logout from './Logout';
-import Collections from './Collections/Collections.js';
 import Logo from '../../../assets/hrf-logo.png';
 
 const { Title } = Typography;
@@ -23,11 +22,6 @@ const Header = () => {
           style={{ backgroundColor: 'inherit', border: 'none' }}
         >
           <Menu.Item>
-            <Link to="/">
-              <Button type="secondary">Dashboard</Button>
-            </Link>
-          </Menu.Item>
-          <Menu.Item>
             <Link to="/upload">
               <Button type="primary">Upload</Button>
             </Link>
@@ -37,7 +31,6 @@ const Header = () => {
           </Menu.Item>
         </Menu>
       </StyledHeader>
-      <Collections />
     </>
   );
 };

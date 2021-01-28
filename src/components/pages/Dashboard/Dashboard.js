@@ -6,8 +6,16 @@ import {
   SearchOutlined,
   DownloadOutlined,
 } from '@ant-design/icons';
+import Collections from './Collections/Collections';
+import Footer from '../../common/footer/Footer';
 import { DivStyled } from './dashboard-styling';
 import { Table } from 'ant-table-extensions';
+import { Layout } from 'antd';
+
+const { Sider } = Layout;
+const { Search } = Input;
+
+const onSearch = value => console.log(value);
 
 const PDFModal = lazy(() => import('../PDFModal/index'));
 
@@ -101,14 +109,6 @@ function Dashboard() {
       filterMultiple: false,
       sorter: (a, b) => a.name.localeCompare(b.name),
       sortDirections: ['descend', 'ascend'],
-    },
-    {
-      title: 'Case ID',
-      dataIndex: 'caseId',
-      key: 'caseId',
-      width: '20%',
-      defaultSortOrder: 'descend',
-      sorter: (a, b) => a.caseId - b.caseId,
     },
     {
       title: 'Country of Origin',
@@ -259,21 +259,33 @@ function Dashboard() {
   };
 
   return (
-    <DivStyled>
-      <Table
-        columns={columns}
-        dataSource={data}
-        onChange={onChange}
-        exportable={true}
-        exportableProps={{
-          fileName: 'Court Data',
-          fields,
-          btnProps: {
-            type: 'secondary',
-          },
+    <>
+      <Sider
+        style={{
+          background: 'white',
+          overflow: 'auto',
+          height: '100vh',
+          position: 'fixed',
+          left: 0,
+          marginTop: 30,
         }}
-      />
-    </DivStyled>
+      >
+        <Collections />
+      </Sider>
+      <DivStyled>
+        <div className={'searchDiv'}>
+          <Search
+            className={'searchBar'}
+            placeholder="Search..."
+            onSearch={onSearch}
+            enterButton
+          />
+          <Button type="secondary">Export to CSV</Button>
+        </div>
+        <Table columns={columns} dataSource={data} onChange={onChange} />
+      </DivStyled>
+      <Footer />
+    </>
   );
 }
 
