@@ -1,5 +1,5 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
-import { Input, Button, Space } from 'antd';
+import { Input, Button, Space, Modal } from 'antd';
 import Highlighter from 'react-highlight-words';
 import {
   FolderAddOutlined,
@@ -23,6 +23,21 @@ function Dashboard() {
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   // const [columnData, setColumnData] = useState([]); - to use http data
+
+  //Modal Business
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   // Holdover - to populate w api call to pull down data
   useEffect(() => {}, []);
@@ -166,14 +181,22 @@ function Dashboard() {
       key: 'documentId',
       render: (text, record, title) => (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <a
-            href="#"
-            //ONCLICK LOGIC TO BE ADDED TO MAKE POST REQUEST TO COLLECTIONS DATA
-          >
+          <a>
             <FolderAddOutlined
               style={{ margin: '0% 5%' }}
               title="Add to collections"
+              onClick={showModal}
             />
+            <Modal
+              // title="Upload"
+              visible={isModalVisible}
+              onOk={handleOk}
+              onCancel={handleCancel}
+              width={600}
+              centered
+            >
+              {/* modal contents here */}
+            </Modal>
           </a>
 
           <a href="#">

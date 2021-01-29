@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import HelpingHands from '../../../assets/HelpingHands.jpg';
-import hrf_centered_logo from '../../../assets/hrf_centered_logo.jpg';
 
 export const StyledLogin = styled.div`
   display: flex;
@@ -14,8 +13,7 @@ export const StyledLogin = styled.div`
     display: flex;
     align-items: center;
     margin: auto;
-    margin-top: -2.5vh;
-    /* width: 50vh; */
+    margin-top: -1vh;
 
     #okta-sign-in.auth-container.main-container {
       font-family: Helvetica, Arial, sans-serif;

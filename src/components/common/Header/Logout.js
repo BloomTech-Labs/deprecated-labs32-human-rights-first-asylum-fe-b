@@ -11,7 +11,11 @@ const Logout = () => {
   };
 
   return (
-    <LogoutOutlined onClick={() => logout()} type="primary"></LogoutOutlined>
+    <LogoutOutlined
+      onClick={() => logout()}
+      type="primary"
+      alt="Logout"
+    ></LogoutOutlined>
   );
 };
 
