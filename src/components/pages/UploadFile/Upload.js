@@ -1,19 +1,64 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Upload, message, Form, Button, Input, Checkbox, Select } from 'antd';
 import { InboxOutlined, FilePdfOutlined } from '@ant-design/icons';
+import axios from 'axios';
 
 import { DivStyled } from './upload-styling';
-// import Search from './SearchTerms'
 
 const { Option } = Select;
 
-const { Dragger } = Upload;
-// Is this the right url?
-const url =
-  'http://asylum-hrf-team-b.eba-2bq2qkfg.us-east-1.elasticbeanstalk.com/insert';
+const url1 =
+  //   'https://asylum-b-api.herokuapp.com/api/tags';
+  'https://quote-garden.herokuapp.com/api/v3/quotes/random';
+const url2 =
+  //   'https://asylum-b-api.herokuapp.com/api/tags';
+  'https://quote-garden.herokuapp.com/api/v3/quotes/random';
+const url3 =
+  //   'https://asylum-b-api.herokuapp.com/api/tags';
+  'https://quote-garden.herokuapp.com/api/v3/quotes/random';
 
 function UploadFile() {
   const [file, setFile] = React.useState('');
+
+  const [tags, setTags] = useState([]);
+  const [main, setMain] = useState([]);
+  const [sub, setSub] = useState([]);
+  // const [selections, setSelections] = useState([])
+
+  useEffect(() => {
+    axios
+      .get(url1)
+      .then(res => {
+        setMain(res.data.data);
+      })
+      .catch(e => {
+        console.log('Problems getting main data', e);
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .get(url2)
+      .then(res => {
+        setSub(res.data);
+      })
+      .catch(e => {
+        console.log('Problems with sub data', e);
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .get(url3)
+      .then(res => {
+        setTags(res.data.data[0]);
+      })
+      .catch(e => {
+        console.log('Problems with tag data', e);
+      });
+  }, []);
+
+  console.log('main', main);
+  console.log('sub', sub);
+  console.log('tags', tags);
 
   function handleUpload(event) {
     setFile(event.target.files[0]);
@@ -35,20 +80,6 @@ function UploadFile() {
 
   return (
     <DivStyled>
-      {/* file validation */}
-      {/* <Dragger {...props} accept=".pdf, .csv">
-        <p className="ant-upload-drag-icon">
-          <InboxOutlined />
-        </p>
-        <p className="ant-upload-text">
-          Click or drag file to this area to upload
-        </p>
-        <p className="ant-upload-hint">
-          Support for a single or bulk upload. Strictly prohibit from uploading
-          company data or other band files.{' '}
-          <p>Upload .pdf or .csv files only</p>
-        </p>
-      </Dragger> */}
       <Form {...layout} name="UploadForm" initialValues={{ remember: true }}>
         <Form.Item>
           <Input type="file" onChange={handleUpload} />
@@ -99,5 +130,3 @@ function UploadFile() {
 }
 
 export default UploadFile;
-
-// Notes:  Not sure why when the upload button is clicked the url doesn't change when it looks like it is linked in switch.
