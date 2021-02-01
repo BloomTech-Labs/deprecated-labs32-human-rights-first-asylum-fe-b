@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, message, Form, Button, Input, Checkbox, Select } from 'antd';
-import { InboxOutlined, FilePdfOutlined } from '@ant-design/icons';
 import axios from 'axios';
-
+import { InboxOutlined, FilePdfOutlined } from '@ant-design/icons';
 import { DivStyled } from './upload-styling';
 
 const { Option } = Select;
@@ -81,17 +80,18 @@ function UploadFile() {
   return (
     <DivStyled>
       <Form {...layout} name="UploadForm" initialValues={{ remember: true }}>
-        <Form.Item>
-          <Input type="file" onChange={handleUpload} />
-        </Form.Item>
-
+        <h1>Upload a Document</h1>
+        <hr />
         <br />
+        <Input type="file" onChange={handleUpload} />
+
         <p>Filename: {file.name}</p>
         <p>File type: {file.type}</p>
         <p>File size: {file.size} bytes</p>
-        {file.type == 'image/png'
-          ? file && <ImageThumb image={file} />
-          : file && <FilePdfOutlined />}
+        {/* <Form.Item>
+        {file && <ImageThumb image={file} />}
+        </Form.Item> */}
+        <hr />
         <br />
 
         <Form.Item>
@@ -114,11 +114,14 @@ function UploadFile() {
         </Form.Item>
 
         <Form.Item>
-          <label>Tags: </label>
-          <Checkbox>Ethnicity</Checkbox>
-          <Checkbox>Race</Checkbox>
-          <Checkbox>Religion</Checkbox>
-          <Checkbox>Orientation</Checkbox>
+          <div class="tagsitem">
+            <label>Tags: </label>
+            <Checkbox>Ethnicity</Checkbox>
+            <Checkbox>Race</Checkbox>
+            <Checkbox>Religion</Checkbox>
+            <Checkbox>Orientation</Checkbox>
+            <Button>Add New Tag</Button>
+          </div>
         </Form.Item>
 
         <Form.Item>
