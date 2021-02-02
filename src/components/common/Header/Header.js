@@ -37,11 +37,6 @@ const Header = () => {
           mode="horizontal"
           style={{ backgroundColor: 'inherit', border: 'none' }}
         >
-          {/* <Menu.Item>
-            <Link to="/">
-              <Button type="primary">Dashboard</Button>
-            </Link>
-          </Menu.Item> */}
           <Menu.Item>
             <Button type="primary" onClick={showModal}>
               Upload
