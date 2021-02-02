@@ -23,7 +23,8 @@ export const DivStyled = styled.div`
     font-family: 'Verdana';
   }
 
-  .ant-radio-group {
-    width: 550px;
+  .tagsitem {
+    flex-direction: column;
+
   }
 `;
