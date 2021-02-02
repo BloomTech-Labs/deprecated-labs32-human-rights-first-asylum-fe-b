@@ -10,11 +10,10 @@ You can find the deployed project hosted on [AWS Amplify](https://b.humanrightsf
 
 ## Contributors
 
-|                                          [Aurelio Arcabascio](https://github.com/aurelio4)                                          |                                                         [Cory Thomas](https://github.com/Cory-Thomas)                                                         |                                                          [David Gold](https://github.com/davidgoldcode)                                                          |
-| :---------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|   [<img src="https://github-images-public28947589.s3.amazonaws.com/17240632.jpeg" width = "200" />](https://github.com/aurelio4)    | [<img src="https://github-images-public28947589.s3.amazonaws.com/Screen+Shot+2021-01-06+at+12.48.26+PM.png" width = "200" />](https://github.com/Cory-Thomas) | [<img src="https://github-images-public28947589.s3.amazonaws.com/Screen+Shot+2021-01-06+at+12.54.40+PM.png" width = "200"  />](https://github.com/davidgoldcode) |
-|                        [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/aurelio4)                        |                                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Cory-Thomas)                                    |                                    [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/davidgoldcode)                                    | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen) |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/aurelio-arcabascio/) |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/corythomasdev/)                 |                    [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/davidigold)                    |
+| Aurelio | Cory | David | Nando | Andre | Jonathan | Mark | Melissa |
+|---|---|---|---|---|---|---|---|
+| [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/aurelio4) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Cory-Thomas) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/davidgoldcode) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/andremichalowski) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jonivander) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/slightflow) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/melissa-24) |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/aurelio-arcabascio/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/corythomasdev/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/davidigold) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/nandotheessen/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/andre-michalowski/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/j-m-warner/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/mark-pekun/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/melissa-longenberger/)  |
 
 <br>
 <br>
@@ -43,9 +42,9 @@ You can find the deployed project hosted on [AWS Amplify](https://b.humanrightsf
 
 # APIs
 
-## Authentication API here
+## Backend API
 
-> To be updated
+* https://asylum-b-api.herokuapp.com/
 
 <br>
 
@@ -55,7 +54,7 @@ You can find the deployed project hosted on [AWS Amplify](https://b.humanrightsf
 - run: `npm install` to download all dependencies.
 - run: `npm start` to start your local development server.
 
-> The app will run locally on port 3000.
+> The app will run locally on port 3000.  Must be run on port 3000 to be able to log in.
 
 # Contributing
 
@@ -92,3 +91,18 @@ Remember that this project is licensed under the MIT license, and by submitting 
 ## Documentation
 
 See [Backend Documentation](https://github.com/Lambda-School-Labs/human-rights-first-asylum-be-b) for details on the backend of our project.
+
+
+## What is working/not working as of labs30
+1. Login is working well
+2. Upload button is in place and styled but not talking to backend.
+3. Collections element built and styled
+
+## Accomplished in Labs30
+1. Added styling using ant.design to whole site
+2. Cleaned up some code
+3. Connected the upload button to the main application and built enough that it does show an uploaded file in the model.
+
+## Still needs to be done as of right now
+1. Connect upload to backend
+2. Connect collections to backend
