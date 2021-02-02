@@ -4,7 +4,6 @@ import { Button, Typography, Menu, Modal } from 'antd';
 import { StyledHeader } from './Header-styling';
 import UploadFile from '../../pages/UploadFile/Upload';
 import Logout from './Logout';
-import Collections from './Collections/Collections.js';
 import Logo from '../../../assets/hrf-logo.png';
 
 const { Title } = Typography;
@@ -79,7 +78,6 @@ const Header = () => {
           </Menu.Item>
         </Menu>
       </StyledHeader>
-      <Collections />
     </>
   );
 };
